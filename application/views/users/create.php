@@ -1,5 +1,7 @@
 
-
+<style>
+.error {color: #FF0000;}
+</style>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -38,11 +40,9 @@
             </div>
             <form role="form" action="<?php base_url('users/create') ?>" method="post">
               <div class="box-body">
-
-                <?php echo validation_errors(); ?>
-
                 <div class="form-group">
                   <label for="groups">Groups</label>
+                  <div class="error"><?php echo form_error('groups'); ?></div>
                   <select class="form-control" id="groups" name="groups">
                     <option value="">Select Groups</option>
                     <?php foreach ($group_data as $k => $v): ?>
@@ -53,41 +53,49 @@
 
                 <div class="form-group">
                   <label for="username">Username</label>
+                  <div class="error"><?php echo form_error('username'); ?></div>
                   <input type="text" class="form-control" id="username" name="username" placeholder="Username" autocomplete="off">
                 </div>
 
                 <div class="form-group">
                   <label for="email">Email</label>
+                  <div class="error"><?php echo form_error('email'); ?></div>
                   <input type="email" class="form-control" id="email" name="email" placeholder="Email" autocomplete="off">
                 </div>
 
                 <div class="form-group">
                   <label for="password">Password</label>
-                  <input type="text" class="form-control" id="password" name="password" placeholder="Password" autocomplete="off">
+                  <div class="error"><?php echo form_error('password'); ?></div>
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Password" autocomplete="off">
                 </div>
 
                 <div class="form-group">
                   <label for="cpassword">Confirm password</label>
+                  <div class="error"><?php echo form_error('cpassword'); ?></div>
                   <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password" autocomplete="off">
                 </div>
 
                 <div class="form-group">
                   <label for="fname">First name</label>
+                  <div class="error"><?php echo form_error('fname'); ?></div>
                   <input type="text" class="form-control" id="fname" name="fname" placeholder="First name" autocomplete="off">
                 </div>
 
                 <div class="form-group">
                   <label for="lname">Last name</label>
+                  <div class="error"><?php echo form_error('fname'); ?></div>
                   <input type="text" class="form-control" id="lname" name="lname" placeholder="Last name" autocomplete="off">
                 </div>
 
                 <div class="form-group">
                   <label for="phone">Phone</label>
+                  <div class="error"><?php echo form_error('groups'); ?></div>
                   <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" autocomplete="off">
                 </div>
 
                 <div class="form-group">
                   <label for="gender">Gender</label>
+                  <div class="error"><?php echo form_error('groups'); ?></div>
                   <div class="radio">
                     <label>
                       <input type="radio" name="gender" id="male" value="1">
@@ -120,7 +128,6 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
 <script type="text/javascript">
   $(document).ready(function() {
     $("#groups").select2();
@@ -130,3 +137,4 @@
   
   });
 </script>
+

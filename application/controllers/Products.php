@@ -95,8 +95,8 @@ class Products extends Admin_Controller
 
 		$this->form_validation->set_rules('product_name', 'Product name', 'trim|required');
 		$this->form_validation->set_rules('sku', 'SKU', 'trim|required');
-		$this->form_validation->set_rules('price', 'Price', 'trim|required');
-		$this->form_validation->set_rules('qty', 'Qty', 'trim|required');
+		$this->form_validation->set_rules('price', 'Price', 'trim|required|is_natural_no_zero');
+		$this->form_validation->set_rules('qty', 'Qty', 'trim|required|is_natural_no_zero');
         $this->form_validation->set_rules('store', 'Store', 'trim|required');
 		$this->form_validation->set_rules('availability', 'Availability', 'trim|required');
 		

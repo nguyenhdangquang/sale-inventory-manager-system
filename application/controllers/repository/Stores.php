@@ -20,9 +20,9 @@ class Stores extends Admin_Controller
     */
 	public function index()
 	{
-		// if(!in_array('viewStore', $this->permission)) {
-		// 	redirect('dashboard', 'refresh');
-		// }
+		if(!in_array('viewStore', $this->permission)) {
+			redirect('repository/dashboard', 'refresh');
+		}
 
 		$this->render_template('repository/stores/index', $this->data);	
 	}
@@ -83,7 +83,7 @@ class Stores extends Admin_Controller
 	public function create()
 	{
 		if(!in_array('createStore', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('repository/dashboard', 'refresh');
 		}
 
 		$response = array();
@@ -127,7 +127,7 @@ class Stores extends Admin_Controller
 	public function update($id)
 	{
 		if(!in_array('updateStore', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('repository/dashboard', 'refresh');
 		}
 
 		$response = array();
@@ -178,7 +178,7 @@ class Stores extends Admin_Controller
 	public function remove()
 	{
 		if(!in_array('deleteStore', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('repository/dashboard', 'refresh');
 		}
 		
 		$store_id = $this->input->post('store_id');

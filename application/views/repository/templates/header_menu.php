@@ -1,10 +1,10 @@
 <header class="main-header">
     <!-- Logo -->
-    <a href="<?php echo base_url('repository/dashboard') ?>" class="logo">
+    <a href="<?php echo base_url('site/Home/') ?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>Inv</b></span>
+      <span class="logo-mini"><i class="fa fa-bitcoin"></i></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Inventory</b></span>
+      <span class="logo-lg"><b>Customer Page</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">

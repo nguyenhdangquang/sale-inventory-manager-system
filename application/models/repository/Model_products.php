@@ -56,10 +56,8 @@ class Model_products extends CI_Model
 
 	public function countTotalProducts()
 	{
-		//$sql = "SELECT * FROM products";
-		//$query = $this->db->query($sql);
-		$this->db->select('*');
-		$query = $this->db->get('products');
+		$sql = "SELECT * FROM products";
+		$query = $this->db->query($sql);
 		return $query->num_rows();
 	}
 

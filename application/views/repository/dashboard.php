@@ -17,6 +17,8 @@
     <!-- Main content -->
     <section class="content">
       <!-- Small boxes (Stat box) -->
+      <?php if($is_admin == true): ?>
+
         <div class="row">
           <div class="col-lg-3 col-xs-6">
             <!-- small box -->
@@ -80,6 +82,7 @@
           <!-- ./col -->
         </div>
         <!-- /.row -->
+      <?php endif; ?>
       
 
     </section>

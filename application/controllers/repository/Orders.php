@@ -22,9 +22,9 @@ class Orders extends Admin_Controller
 	*/
 	public function index()
 	{
-		// if(!in_array('viewOrder', $this->permission)) {
-  //           	redirect('dashboard', 'refresh');
-  //       	}
+		if(!in_array('viewOrder', $this->permission)) {
+            redirect('repository/dashboard', 'refresh');
+        }
 
 		$this->data['page_title'] = 'Manage Orders';
 		$this->render_template('repository/orders/index', $this->data);		
@@ -52,11 +52,11 @@ class Orders extends Admin_Controller
 			$buttons = '';
 
 			if(in_array('viewOrder', $this->permission)) {
-				$buttons .= '<a target="__blank" href="'.base_url('orders/printDiv/'.$value['id']).'" class="btn btn-default"><i class="fa fa-print"></i></a>';
+				$buttons .= '<a target="__blank" href="'.base_url('repository/orders/printDiv/'.$value['id']).'" class="btn btn-default"><i class="fa fa-print"></i></a>';
 			}
 
 			if(in_array('updateOrder', $this->permission)) {
-				$buttons .= ' <a href="'.base_url('orders/update/'.$value['id']).'" class="btn btn-default"><i class="fa fa-pencil"></i></a>';
+				$buttons .= ' <a href="'.base_url('repository/orders/update/'.$value['id']).'" class="btn btn-default"><i class="fa fa-pencil"></i></a>';
 			}
 
 			if(in_array('deleteOrder', $this->permission)) {
@@ -92,39 +92,39 @@ class Orders extends Admin_Controller
 	*/
 	public function create()
 	{
-		// if(!in_array('createOrder', $this->permission)) {
-  //           	redirect('dashboard', 'refresh');
-  //       	}
+		if(!in_array('createOrder', $this->permission)) {
+            redirect('repository/dashboard', 'refresh');
+        }
 
 		$this->data['page_title'] = 'Add Order';
 
 		$this->form_validation->set_rules('product[]', 'Product name', 'trim|required');
 		
 	
-	        if ($this->form_validation->run() == TRUE) {        	
-	        	
-	        	$order_id = $this->model_orders->create();
-	        	
-	        	if($order_id) {
-	        		$this->session->set_flashdata('success', 'Successfully created');
-	        		redirect('repository/orders/update/'.$order_id, 'refresh');
-	        	}
-	        	else {
-	        		$this->session->set_flashdata('errors', 'Error occurred!!');
-	        		redirect('repository/orders/create/', 'refresh');
-	        	}
-	        }
-	        else {
-	            // false case
-	        	$company = $this->model_company->getCompanyData(1);
-	        	$this->data['company_data'] = $company;
-	        	$this->data['is_vat_enabled'] = ($company['vat_charge_value'] > 0) ? true : false;
-	        	$this->data['is_service_enabled'] = ($company['service_charge_value'] > 0) ? true : false;
+        if ($this->form_validation->run() == TRUE) {        	
+        	
+        	$order_id = $this->model_orders->create();
+        	
+        	if($order_id) {
+        		$this->session->set_flashdata('success', 'Successfully created');
+        		redirect('repository/orders/update/'.$order_id, 'refresh');
+        	}
+        	else {
+        		$this->session->set_flashdata('errors', 'Error occurred!!');
+        		redirect('repository/orders/create/', 'refresh');
+        	}
+        }
+        else {
+            // false case
+        	$company = $this->model_company->getCompanyData(1);
+        	$this->data['company_data'] = $company;
+        	$this->data['is_vat_enabled'] = ($company['vat_charge_value'] > 0) ? true : false;
+        	$this->data['is_service_enabled'] = ($company['service_charge_value'] > 0) ? true : false;
 
-	        	$this->data['products'] = $this->model_products->getActiveProductData();      	
+        	$this->data['products'] = $this->model_products->getActiveProductData();      	
 
-	            $this->render_template('repository/orders/create', $this->data);
-	        }	
+            $this->render_template('repository/orders/create', $this->data);
+        }	
 	}
 
 	/*
@@ -160,11 +160,11 @@ class Orders extends Admin_Controller
 	public function update($id)
 	{
 		if(!in_array('updateOrder', $this->permission)) {
-            redirect('dashboard', 'refresh');
+            redirect('repository/dashboard', 'refresh');
         }
 
 		if(!$id) {
-			redirect('dashboard', 'refresh');
+			redirect('repository/dashboard', 'refresh');
 		}
 
 		$this->data['page_title'] = 'Update Order';
@@ -178,11 +178,11 @@ class Orders extends Admin_Controller
         	
         	if($update == true) {
         		$this->session->set_flashdata('success', 'Successfully updated');
-        		redirect('orders/update/'.$id, 'refresh');
+        		redirect('repository/orders/update/'.$id, 'refresh');
         	}
         	else {
         		$this->session->set_flashdata('errors', 'Error occurred!!');
-        		redirect('orders/update/'.$id, 'refresh');
+        		redirect('repository/orders/update/'.$id, 'refresh');
         	}
         }
         else {
@@ -206,7 +206,7 @@ class Orders extends Admin_Controller
 
         	$this->data['products'] = $this->model_products->getActiveProductData();      	
 
-            $this->render_template('orders/edit', $this->data);
+            $this->render_template('repository/orders/edit', $this->data);
         }
 	}
 
@@ -217,7 +217,7 @@ class Orders extends Admin_Controller
 	public function remove()
 	{
 		if(!in_array('deleteOrder', $this->permission)) {
-            redirect('dashboard', 'refresh');
+            redirect('repository/dashboard', 'refresh');
         }
 
 		$order_id = $this->input->post('order_id');
@@ -249,7 +249,7 @@ class Orders extends Admin_Controller
 	public function printDiv($id)
 	{
 		if(!in_array('viewOrder', $this->permission)) {
-            redirect('dashboard', 'refresh');
+            redirect('repository/dashboard', 'refresh');
         }
         
 		if($id) {

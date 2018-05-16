@@ -32,7 +32,6 @@ class Dashboard extends Admin_Controller
 		$is_admin = ($user_id == 1) ? true :false;
 
 		$this->data['is_admin'] = $is_admin;
-		$this->render_template('repository/Dashboard', $this->data);
-		//$this->load->view('repository/dashboard', $this->data, FALSE);
+		$this->render_template('repository/dashboard', $this->data);
 	}
 }

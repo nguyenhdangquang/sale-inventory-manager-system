@@ -34,8 +34,10 @@
           </div>
         <?php endif; ?>
 
+        <?php //if(in_array('createGroup', $user_permission)): ?>
           <button class="btn btn-primary" data-toggle="modal" data-target="#addModal">Add Attribute</button>
           <br /> <br />
+        <?php //endif; ?>
 
         <div class="box">
           <div class="box-header">
@@ -81,7 +83,7 @@
         <h4 class="modal-title">Add Attribute</h4>
       </div>
 
-      <form role="form" action="<?php echo base_url('attributes/create') ?>" method="post" id="createForm">
+      <form role="form" action="<?php echo base_url('repository/attributes/create') ?>" method="post" id="createForm">
 
         <div class="modal-body">
 
@@ -119,7 +121,7 @@
         <h4 class="modal-title">Edit Store</h4>
       </div>
 
-      <form role="form" action="<?php echo base_url('attributes/update') ?>" method="post" id="updateForm">
+      <form role="form" action="<?php echo base_url('repository/attributes/update') ?>" method="post" id="updateForm">
 
         <div class="modal-body">
           <div id="messages"></div>
@@ -158,7 +160,7 @@
         <h4 class="modal-title">Remove Attribute</h4>
       </div>
 
-      <form role="form" action="<?php echo base_url('attributes/remove') ?>" method="post" id="removeForm">
+      <form role="form" action="<?php echo base_url('repository/attributes/remove') ?>" method="post" id="removeForm">
         <div class="modal-body">
           <p>Do you really want to remove?</p>
         </div>
@@ -187,7 +189,7 @@ $(document).ready(function() {
 
   // initialize the datatable 
   manageTable = $('#manageTable').DataTable({
-    'ajax': base_url + 'attributes/fetchAttributeData',
+    'ajax': base_url + 'repository/attributes/fetchAttributeData',
     'order': []
   });
 

@@ -22,9 +22,9 @@ class Company extends Admin_Controller
     */
 	public function index()
 	{  
-        // if(!in_array('updateCompany', $this->permission)) {
-        //     redirect('dashboard', 'refresh');
-        // }
+        if(!in_array('updateCompany', $this->permission)) {
+            redirect('repository/dashboard', 'refresh');
+        }
         
 		$this->form_validation->set_rules('company_name', 'Company name', 'trim|required');
 		$this->form_validation->set_rules('service_charge_value', 'Charge Amount', 'trim|integer');

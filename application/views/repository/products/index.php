@@ -34,8 +34,10 @@
           </div>
         <?php endif; ?>
 
+        <?php if(in_array('createProduct', $user_permission)): ?>
           <a href="<?php echo base_url('repository/products/create') ?>" class="btn btn-primary">Add Product</a>
           <br /> <br />
+        <?php endif; ?>
 
         <div class="box">
           <div class="box-header">
@@ -53,7 +55,9 @@
                 <th>Qty</th>
                 <th>Store</th>
                 <th>Availability</th>
+                <?php if(in_array('updateProduct', $user_permission) || in_array('deleteProduct', $user_permission)): ?>
                   <th>Action</th>
+                <?php endif; ?>
               </tr>
               </thead>
 
@@ -73,6 +77,7 @@
 </div>
 <!-- /.content-wrapper -->
 
+<?php if(in_array('deleteProduct', $user_permission)): ?>
 <!-- remove brand modal -->
 <div class="modal fade" tabindex="-1" role="dialog" id="removeModal">
   <div class="modal-dialog" role="document">
@@ -91,9 +96,12 @@
           <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
       </form>
+
+
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+<?php endif; ?>
 
 
 

@@ -18,9 +18,9 @@ class Users extends Admin_Controller
 	
 	public function index()
 	{
-		// if(!in_array('viewUser', $this->permission)) {
-		// 	redirect('repository/dashboard', 'refresh');
-		// }
+		if(!in_array('viewUser', $this->permission)) {
+			redirect('repository/dashboard', 'refresh');
+		}
 
 		$user_data = $this->model_users->getUserData();
 
@@ -40,9 +40,9 @@ class Users extends Admin_Controller
 
 	public function create()
 	{
-		// if(!in_array('createUser', $this->permission)) {
-		// 	redirect('dashboard', 'refresh');
-		// }
+		if(!in_array('createUser', $this->permission)) {
+			redirect('repository/dashboard', 'refresh');
+		}
 
 		$this->form_validation->set_rules('groups', 'Group', 'required');
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[12]|is_unique[users.username]');
@@ -121,11 +121,11 @@ class Users extends Admin_Controller
 		        	$update = $this->model_users->edit($data, $id, $this->input->post('groups'));
 		        	if($update == true) {
 		        		$this->session->set_flashdata('success', 'Successfully created');
-		        		redirect('users/', 'refresh');
+		        		redirect('repository/users/', 'refresh');
 		        	}
 		        	else {
 		        		$this->session->set_flashdata('errors', 'Error occurred!!');
-		        		redirect('users/edit/'.$id, 'refresh');
+		        		redirect('repository/users/edit/'.$id, 'refresh');
 		        	}
 		        }
 		        else {
@@ -149,11 +149,11 @@ class Users extends Admin_Controller
 			        	$update = $this->model_users->edit($data, $id, $this->input->post('groups'));
 			        	if($update == true) {
 			        		$this->session->set_flashdata('success', 'Successfully updated');
-			        		redirect('users/', 'refresh');
+			        		redirect('repository/users/', 'refresh');
 			        	}
 			        	else {
 			        		$this->session->set_flashdata('errors', 'Error occurred!!');
-			        		redirect('users/edit/'.$id, 'refresh');
+			        		redirect('repository/users/edit/'.$id, 'refresh');
 			        	}
 					}
 			        else {
@@ -167,7 +167,7 @@ class Users extends Admin_Controller
 			            $group_data = $this->model_groups->getGroupData();
 			        	$this->data['group_data'] = $group_data;
 
-						$this->render_template('users/edit', $this->data);	
+						$this->render_template('repository/users/edit', $this->data);	
 			        }	
 
 		        }
@@ -183,7 +183,7 @@ class Users extends Admin_Controller
 	            $group_data = $this->model_groups->getGroupData();
 	        	$this->data['group_data'] = $group_data;
 
-				$this->render_template('users/edit', $this->data);	
+				$this->render_template('repository/users/edit', $this->data);	
 	        }	
 		}	
 	}
@@ -191,7 +191,7 @@ class Users extends Admin_Controller
 	public function delete($id)
 	{
 		if(!in_array('deleteUser', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('repository/dashboard', 'refresh');
 		}
 
 		if($id) {
@@ -199,26 +199,26 @@ class Users extends Admin_Controller
 					$delete = $this->model_users->delete($id);
 					if($delete == true) {
 		        		$this->session->set_flashdata('success', 'Successfully removed');
-		        		redirect('users/', 'refresh');
+		        		redirect('repository/users/', 'refresh');
 		        	}
 		        	else {
 		        		$this->session->set_flashdata('error', 'Error occurred!!');
-		        		redirect('users/delete/'.$id, 'refresh');
+		        		redirect('repository/users/delete/'.$id, 'refresh');
 		        	}
 
 			}	
 			else {
 				$this->data['id'] = $id;
-				$this->render_template('users/delete', $this->data);
+				$this->render_template('repository/users/delete', $this->data);
 			}	
 		}
 	}
 
 	public function profile()
 	{
-		// if(!in_array('viewProfile', $this->permission)) {
-		// 	redirect('dashboard', 'refresh');
-		// }
+		if(!in_array('viewProfile', $this->permission)) {
+			redirect('repository/dashboard', 'refresh');
+		}
 
 		$user_id = $this->session->userdata('id');
 
@@ -228,14 +228,14 @@ class Users extends Admin_Controller
 		$user_group = $this->model_users->getUserGroup($user_id);
 		$this->data['user_group'] = $user_group;
 
-        	$this->render_template('repository/users/profile', $this->data);
+        $this->render_template('repository/users/profile', $this->data);
 	}
 
 	public function setting()
 	{	
-		// if(!in_array('updateSetting', $this->permission)) {
-		// 	redirect('dashboard', 'refresh');
-		// }
+		if(!in_array('updateSetting', $this->permission)) {
+			redirect('repository/dashboard', 'refresh');
+		}
 
 		$id = $this->session->userdata('id');
 

@@ -25,7 +25,7 @@ class Products extends Admin_Controller
 	public function index()
 	{
         if(!in_array('viewProduct', $this->permission)) {
-            redirect('dashboard', 'refresh');
+            redirect('repository/dashboard', 'refresh');
         }
 
 		$this->render_template('repository/products/index', $this->data);	
@@ -89,14 +89,14 @@ class Products extends Admin_Controller
     */
 	public function create()
 	{
-		// if(!in_array('createProduct', $this->permission)) {
-  //           redirect('dashboard', 'refresh');
-  //       }
+		if(!in_array('createProduct', $this->permission)) {
+            redirect('repository/dashboard', 'refresh');
+        }
 
 		$this->form_validation->set_rules('product_name', 'Product name', 'trim|required');
 		$this->form_validation->set_rules('sku', 'SKU', 'trim|required');
-		$this->form_validation->set_rules('price', 'Price', 'trim|required');
-		$this->form_validation->set_rules('qty', 'Qty', 'trim|required');
+		$this->form_validation->set_rules('price', 'Price', 'trim|required|is_natural_no_zero');
+		$this->form_validation->set_rules('qty', 'Qty', 'trim|required|is_natural_no_zero');
         $this->form_validation->set_rules('store', 'Store', 'trim|required');
 		$this->form_validation->set_rules('availability', 'Availability', 'trim|required');
 		
@@ -160,7 +160,7 @@ class Products extends Admin_Controller
 	public function upload_image()
     {
     	// assets/images/product_image
-        $config['upload_path'] = '/upload/assets/images/products/';
+        $config['upload_path'] = 'assets/images/product_image';
         $config['file_name'] =  uniqid();
         $config['allowed_types'] = 'gif|jpg|png';
         $config['max_size'] = '1000';
@@ -193,7 +193,7 @@ class Products extends Admin_Controller
 	public function update($product_id)
 	{      
         if(!in_array('updateProduct', $this->permission)) {
-            redirect('dashboard', 'refresh');
+            redirect('repository/dashboard', 'refresh');
         }
 
         if(!$product_id) {
@@ -238,7 +238,7 @@ class Products extends Admin_Controller
             }
             else {
                 $this->session->set_flashdata('errors', 'Error occurred!!');
-                redirect('products/update/'.$product_id, 'refresh');
+                redirect('repository/products/update/'.$product_id, 'refresh');
             }
         }
         else {
@@ -262,7 +262,7 @@ class Products extends Admin_Controller
 
             $product_data = $this->model_products->getProductData($product_id);
             $this->data['product_data'] = $product_data;
-            $this->render_template('products/edit', $this->data); 
+            $this->render_template('repository/products/edit', $this->data); 
         }   
 	}
 
@@ -273,7 +273,7 @@ class Products extends Admin_Controller
 	public function remove()
 	{
         if(!in_array('deleteProduct', $this->permission)) {
-            redirect('dashboard', 'refresh');
+            redirect('repository/dashboard', 'refresh');
         }
         
         $product_id = $this->input->post('product_id');

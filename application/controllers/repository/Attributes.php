@@ -20,9 +20,9 @@ class Attributes extends Admin_Controller
 	*/
 	public function index()
 	{
-		// if(!in_array('viewAttribute', $this->permission)) {
-		// 	redirect('dashboard', 'refresh');
-		// }
+		if(!in_array('viewAttribute', $this->permission)) {
+			redirect('repository/dashboard', 'refresh');
+		}
 
 		$this->render_template('repository/attributes/index', $this->data);	
 	}
@@ -52,7 +52,7 @@ class Attributes extends Admin_Controller
 			$count_attribute_value = $this->model_attributes->countAttributeValue($value['id']);
 
 			// button
-			$buttons = '<a href="'.base_url('attributes/addvalue/'.$value['id']).'" class="btn btn-default"><i class="fa fa-plus"></i> Add Value</a> 
+			$buttons = '<a href="'.base_url('repository/attributes/addvalue/'.$value['id']).'" class="btn btn-default"><i class="fa fa-plus"></i> Add Value</a> 
 			<button type="button" class="btn btn-default" onclick="editFunc('.$value['id'].')" data-toggle="modal" data-target="#editModal"><i class="fa fa-pencil"></i></button>
 			<button type="button" class="btn btn-default" onclick="removeFunc('.$value['id'].')" data-toggle="modal" data-target="#removeModal"><i class="fa fa-trash"></i></button>
 			';
@@ -76,7 +76,7 @@ class Attributes extends Admin_Controller
 	public function create()
 	{
 		if(!in_array('createAttribute', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('repository/dashboard', 'refresh');
 		}
 
 		$response = array();
@@ -118,7 +118,7 @@ class Attributes extends Admin_Controller
 	public function update($id)
 	{
 		if(!in_array('updateAttribute', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('repository/dashboard', 'refresh');
 		}
 
 		$response = array();
@@ -166,7 +166,7 @@ class Attributes extends Admin_Controller
 	public function remove()
 	{
 		if(!in_array('deleteAttribute', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('repository/dashboard', 'refresh');
 		}
 
 		$attribute_id = $this->input->post('attribute_id');
@@ -199,12 +199,12 @@ class Attributes extends Admin_Controller
 	public function addvalue($attribute_id = null)
 	{
 		if(!$attribute_id) {
-			redirect('dashboard', 'refersh');
+			redirect('repository/dashboard', 'refersh');
 		}
 
 		$this->data['attribute_data'] = $this->model_attributes->getAttributeData($attribute_id);
 
-		$this->render_template('attributes/addvalue', $this->data);	
+		$this->render_template('repository/attributes/addvalue', $this->data);	
 	}
 
 

@@ -20,9 +20,9 @@ class Brands extends Admin_Controller
 	*/
 	public function index()
 	{
-		// if(!in_array('viewBrand', $this->permission)) {
-		// 	redirect('repository/dashboard', 'refresh');
-		// }
+		if(!in_array('viewBrand', $this->permission)) {
+			redirect('repository/dashboard', 'refresh');
+		}
 
 		$result = $this->model_brands->getBrandData();
 
@@ -91,7 +91,7 @@ class Brands extends Admin_Controller
 	{
 
 		if(!in_array('createBrand', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('repository/dashboard', 'refresh');
 		}
 
 		$response = array();
@@ -185,7 +185,7 @@ class Brands extends Admin_Controller
 	public function remove()
 	{
 		if(!in_array('deleteBrand', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('repository/dashboard', 'refresh');
 		}
 		
 		$brand_id = $this->input->post('brand_id');

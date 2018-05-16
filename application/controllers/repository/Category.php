@@ -21,9 +21,9 @@ class Category extends Admin_Controller
 	public function index()
 	{
 
-		// if(!in_array('viewCategory', $this->permission)) {
-		// 	redirect('dashboard', 'refresh');
-		// }
+		if(!in_array('viewCategory', $this->permission)) {
+			redirect('repository/dashboard', 'refresh');
+		}
 
 		$this->render_template('repository/category/index', $this->data);	
 	}	
@@ -88,7 +88,7 @@ class Category extends Admin_Controller
 	public function create()
 	{
 		if(!in_array('createCategory', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('repository/dashboard', 'refresh');
 		}
 
 		$response = array();
@@ -133,7 +133,7 @@ class Category extends Admin_Controller
 	{
 
 		if(!in_array('updateCategory', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('repository/dashboard', 'refresh');
 		}
 
 		$response = array();
@@ -182,7 +182,7 @@ class Category extends Admin_Controller
 	public function remove()
 	{
 		if(!in_array('deleteCategory', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('repository/dashboard', 'refresh');
 		}
 		
 		$category_id = $this->input->post('category_id');

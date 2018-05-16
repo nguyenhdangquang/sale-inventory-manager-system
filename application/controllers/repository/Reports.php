@@ -17,9 +17,9 @@ class Reports extends Admin_Controller
     */
 	public function index()
 	{
-		// if(!in_array('viewReports', $this->permission)) {
-	 //            redirect('dashboard', 'refresh');
-	 //        }
+		if(!in_array('viewReports', $this->permission)) {
+            redirect('repository/dashboard', 'refresh');
+        }
 		
 		$today_year = date('Y');
 

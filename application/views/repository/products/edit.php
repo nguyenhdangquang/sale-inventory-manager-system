@@ -171,10 +171,6 @@
     $("#mainProductNav").addClass('active');
     $("#manageProductNav").addClass('active');
     
-    var btnCust = '<button type="button" class="btn btn-secondary" title="Add picture tags" ' + 
-        'onclick="alert(\'Call your custom code here.\')">' +
-        '<i class="glyphicon glyphicon-tag"></i>' +
-        '</button>'; 
     $("#product_image").fileinput({
         overwriteInitial: true,
         maxFileSize: 1500,
@@ -188,7 +184,7 @@
         elErrorContainer: '#kv-avatar-errors-1',
         msgErrorClass: 'alert alert-block alert-danger',
         // defaultPreviewContent: '<img src="/uploads/default_avatar_male.jpg" alt="Your Avatar">',
-        layoutTemplates: {main2: '{preview} ' +  btnCust + ' {remove} {browse}'},
+        layoutTemplates: {main2: '{preview} ' + ' {remove} {browse}'},
         allowedFileExtensions: ["jpg", "png", "gif"]
     });
 

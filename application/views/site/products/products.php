@@ -51,7 +51,7 @@
                         <div class="row">
                             <div class="col-xs-4 col-sm-4 no-margin">
                                 <a href="#" class="thumb-holder">
-                        <img alt="" src="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>"/>
+                        <img alt="" src="<?php echo base_url(); ?><?php echo $value['image'] ?>"/>
                     </a>
                             </div>
                             <div class="col-xs-8 col-sm-8 no-margin">
@@ -148,7 +148,7 @@
                         <div class="row">
                             <div class="col-xs-4 col-sm-4 no-margin">
                                 <a href="#" class="thumb-holder">
-                        <img alt="" src="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" data-echo="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" />
+                        <img alt="" src="<?php echo base_url(); ?><?php echo $value['image'] ?>" data-echo="<?php echo base_url(); ?><?php echo $value['image'] ?>" />
                     </a>
                             </div>
                             <div class="col-xs-8 col-sm-8 no-margin">
@@ -264,7 +264,7 @@
                         <div class="product-item">
                             <div class="ribbon red"><span>sale</span></div>
                             <div class="image">
-                                <img alt="" src="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" data-echo="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" />
+                                <img alt="" src="<?php echo base_url(); ?><?php echo $value['image'] ?>" data-echo="<?php echo base_url(); ?><?php echo $value['image'] ?>" />
                             </div>
                             <div class="body">
                                 <div class="title">
@@ -529,7 +529,7 @@
                                         <div class="product-item">
                                             <div class="ribbon red"><span>sale</span></div>
                                             <div class="image">
-                                                <img alt="" src="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" data-echo="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" />
+                                                <img alt="" src="<?php echo base_url(); ?><?php echo $value['image'] ?>" data-echo="<?php echo base_url(); ?><?php echo $value['image'] ?>" />
                                             </div>
                                             <div class="body">
                                                 <div class="label-discount green">-50% sale</div>

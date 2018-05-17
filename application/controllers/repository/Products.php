@@ -234,7 +234,7 @@ class Products extends Admin_Controller
             $update = $this->model_products->update($data, $product_id);
             if($update == true) {
                 $this->session->set_flashdata('success', 'Successfully updated');
-                redirect('products/', 'refresh');
+                redirect('repository/products/', 'refresh');
             }
             else {
                 $this->session->set_flashdata('errors', 'Error occurred!!');

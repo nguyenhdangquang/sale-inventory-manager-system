@@ -1,7 +1,5 @@
 
-<style>
-.error {color: #FF0000;}
-</style>
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -38,11 +36,13 @@
             <div class="box-header">
               <h3 class="box-title">Add Group</h3>
             </div>
-            <form role="form" action="<?php base_url('repository/groups/create') ?>" method="post">
+            <form role="form" action="<?php base_url('groups/create') ?>" method="post">
               <div class="box-body">
+
+                <?php echo validation_errors(); ?>
+
                 <div class="form-group">
                   <label for="group_name">Group Name</label>
-                  <div class="error"><?php echo form_error('group_name'); ?></div>
                   <input type="text" class="form-control" id="group_name" name="group_name" placeholder="Enter group name">
                 </div>
                 <div class="form-group">
@@ -152,7 +152,7 @@
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Save Changes</button>
-                <a href="<?php echo base_url('repository/groups/') ?>" class="btn btn-warning">Back</a>
+                <a href="<?php echo base_url('groups/') ?>" class="btn btn-warning">Back</a>
               </div>
             </form>
           </div>

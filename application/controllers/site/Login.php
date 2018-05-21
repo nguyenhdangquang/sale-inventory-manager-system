@@ -27,7 +27,7 @@ class Login extends CI_Controller {
 	}
 	public function check_login()
 	{
-		$a_UserInfo['email'] = $this->input->post('username');
+		$a_UserInfo['email'] = $this->input->post('email');
 		$a_UserInfo['pass'] = $this->input->post('password');
 		
 		$this->load->model('site/Home_model');
@@ -38,7 +38,7 @@ class Login extends CI_Controller {
 			$this->form_validation->set_message(__FUNCTION__,'Đăng nhập thành công');
 			return true;
 		}
-		$this->form_validation->set_message(__FUNCTION__,'Đăng nhập không thành công');
+		$this->form_validation->set_message(__FUNCTION__,'<p style="color:red">Đăng nhập không thành công<p/>');
 		return false;
 	}
 	

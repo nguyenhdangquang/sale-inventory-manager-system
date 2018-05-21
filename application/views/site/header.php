@@ -25,14 +25,14 @@
 </div><!-- /.contact-row -->
 <!-- ============================================================= SEARCH AREA ============================================================= -->
 <div class="search-area">
-    <form id="my_form" method="post" class="search" action="<?php echo base_url('site/Home/Search') ?>">
+    <form id="my_form" method="post" class="search" action="<?php echo base_url('site/Search') ?>">
         <div class="control-group">
             <input name="txtSearch" class="search-field" placeholder="Search for item" />
 
             <ul class="categories-filter animate-dropdown">
                 <li class="dropdown">
 
-                    <a class="dropdown-toggle"  data-toggle="dropdown" href="category-grid.html">all categories</a>
+                    <a class="dropdown-toggle"  data-toggle="dropdown" href="category-grid.html">danh mục</a>
 
                     <ul class="dropdown-menu" role="menu" >
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="category-grid.html">laptops</a></li>
@@ -56,9 +56,6 @@
     <div class="wishlist-compare-holder">
         <div class="wishlist ">
             <a href="#"><i class="fa fa-heart"></i> wishlist <span class="value">(21)</span> </a>
-        </div>
-        <div class="compare">
-            <a href="#"><i class="fa fa-exchange"></i> compare <span class="value">(2)</span> </a>
         </div>
     </div>
 

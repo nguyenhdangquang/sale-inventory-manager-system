@@ -43,9 +43,9 @@
                     <div class="col-xs-12 col-sm-3 no-margin">
                         <div class="quantity">
                             <div class="le-quantity">
-                                    <a class="minuss" onclick="minus(this);" href="#">-</a>
+                                    <a class="minuss" onclick="minus(<?php echo $i ?>);" href="#">-</a>
                                     <?php echo form_input(array('name' => $i.'[qty]', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5', 'id' => 'quantity'.$i)); ?>
-                                    <a class="pluss" onclick="plus(this);" href="#">+</a>
+                                    <a class="pluss" onclick="plus(<?php echo $i ?>);" href="#">+</a>
                             </div>
                         </div>
                     </div> 
@@ -59,6 +59,7 @@
                 </div><!-- /.cart-item -->
                     <?php $i++; ?>
                 <?php endforeach ?>
+                <input type="hidden" name="total_row" value="<?php echo $i; ?>">
             </div>
         
 

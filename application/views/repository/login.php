@@ -45,7 +45,7 @@
       echo $errors;
     } ?>
 
-    <form action="<?php echo base_url('repository/auth/login') ?>" method="post">
+    <form data-toggle="validator" role="form" name="form" class="form-horizontal" enctype="multipart/form-data" method="POST" action="<?php echo base_url('repository/Auth/login') ?>">
       <div class="form-group has-feedback">
         <input type="email" class="form-control" name="email" id="email" placeholder="Email" autocomplete="off">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

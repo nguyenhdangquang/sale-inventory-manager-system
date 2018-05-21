@@ -1,97 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<?php $this->load->view('site/head'); ?>
-	</head>
+<head>
+    <?php $this->load->view('site/head'); ?>
+</head>
 <body>
-	
-	<div class="wrapper">
-		<!-- ============================================================= TOP NAVIGATION ============================================================= -->
-<?php $this->load->view('site/navigator'); ?>
-<!-- ============================================================= TOP NAVIGATION : END ============================================================= -->		<!-- ============================================================= HEADER ============================================================= -->
-<?php $this->load->view('site/header'); ?>
-<!-- ============================================================= HEADER : END ============================================================= -->		<!-- ========================================= MAIN ========================================= -->
-<main id="authentication" class="inner-bottom-md">
-	<div class="container">
-		<div class="row">
-			
-			<div class="col-md-6">
-				<section class="section sign-in inner-right-xs">
-					<h2 class="bordered">Sign In</h2>
-					<?php echo validation_errors(); ?>  
-
-                        <?php if(!empty($errors)) {
-                          echo $errors;
-                        } ?>
-
-					<div class="social-auth-buttons">
-						<div class="row">
-							<div class="col-md-6">
-								<button class="btn-block btn-lg btn btn-facebook"><i class="fa fa-facebook"></i> Sign In with Facebook</button>
-							</div>
-							<div class="col-md-6">
-								<button class="btn-block btn-lg btn btn-twitter"><i class="fa fa-twitter"></i> Sign In with Twitter</button>
-							</div>
-						</div>
-					</div>
-
-					<form data-toggle="validator" role="form" name="form" id="form-signUp" enctype="multipart/form-data" method="POST" action="" novalidate="true" class="login-form cf-style-1">
-						<div class="form-group field-row">
-                            <label for="email">Email</label>
-                            <input id="email" type="Email" class="form-control input-email" name="email" required placeholder="Nhập mail bạn theo định dạng abc@gmail.com">
-                            <div class="underline"></div>
-                            <div class="help-block with-errors"></div>
-                        </div><!-- /.field-row -->
-
-                        <div class="form-group  field-row">
-                            <label for="pass">Password</label>
-                            <input data-toggle="tooltip" data-placement="top" title="" name="password" class="form-control input-pass test" id="pass" data-minlength="6" required="" data-error="Mật khẩu phải ít nhất 6 kí tự" placeholder="Enter password" data-original-title="Enter password, please!!!" type="password">
-                             <div class="underline"></div>
-                            <div class="help-block with-errors"></div>
-                        </div><!-- /.field-row -->
-
-                        <div class="field-row clearfix">
-                        	<span class="pull-left">
-                        		<label class="content-color"><input type="checkbox" class="le-checbox auto-width inline"> <span class="bold">Remember me</span></label>
-                        	</span>
-                        	<span class="pull-right">
-                        		<a href="#" class="content-color bold">Forgotten Password ?</a>
-                        	</span>
-                        </div>
-
-                        <div class="buttons-holder">
-                            <button type="submit" class="le-button huge">Secure Sign In</button>
-                        </div><!-- /.buttons-holder -->
-					</form><!-- /.cf-style-1 -->
-
-				</section><!-- /.sign-in -->
-			</div><!-- /.col -->
-
-			<div class="col-md-6">
-				<section class="section register inner-left-xs">
-					<h2 class="bordered">Đăng kí tài khoản tại đây</h2>
-
-                        <div class="buttons-holder">
-                            <a class="le-button huge" href="<?php echo base_url('site/Register') ?>">Đăng ki</a>
-                        </div><!-- /.buttons-holder -->
-
-					<h2 class="semi-bold">Đăng kí hôm nay bạn sẽ có thể :</h2>
-
-					<ul class="list-unstyled list-benefits">
-						<li><i class="fa fa-check primary-color"></i> Thanh toán nhanh gọn lẹ</li>
-						<li><i class="fa fa-check primary-color"></i> Theo dõi đơn hàng dễ dàng</li>
-						<li><i class="fa fa-check primary-color"></i> Lưu giữ các giao dịch của bạn</li>
-					</ul>
-
-				</section><!-- /.register -->
-
-			</div><!-- /.col -->
-
-		</div><!-- /.row -->
-	</div><!-- /.container -->
-</main><!-- /.authentication -->
-<!-- ========================================= MAIN : END ========================================= -->		<!-- ============================================================= FOOTER ============================================================= -->
- <!-- ======= FOOTER ============== -->
+    <div class="wrapper">
+        <!-- =================== TOP NAVIGATION ================================ -->
+        <?php $this->load->view('site/navigator'); ?>
+        <!-- ===================== TOP NAVIGATION : END ============================ -->
+        <!-- ======================== HEADER =================================== -->
+        <?php $this->load->view('site/header'); ?>
+        <!-- ========================= HEADER : END ============================= -->
+        <?php $this->load->view('site/search/content'); ?>
+        <!-- ======= FOOTER ============== -->
         <?php $this->load->view('site/footer'); ?>
         <!-- ======= FOOTER : END ============== -->
     </div>
@@ -160,7 +81,6 @@
     <script src="<?php echo base_url(); ?>/upload/assets/js/jquery.customSelect.min.js"></script>
     <script src="<?php echo base_url(); ?>/upload/assets/js/wow.min.js"></script>
     <script src="<?php echo base_url(); ?>/upload/assets/js/scripts.js"></script>
-    <script src="<?php echo base_url(); ?>public/site/cssLogin/validator.min.js"></script>
 
     <!-- For demo purposes – can be removed on production -->
     
@@ -183,5 +103,41 @@
 
     <script src="http://w.sharethis.com/button/buttons.js"></script>
 
+    <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/59f55a16bb0c3f433d4c5c05/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+        </script>
 </body>
 </html>
+<script>
+    $(document).ready(function() {
+            $('.add_cart').click(function() {
+                    var product_id = $(this).data("productid");
+                    var product_name = $(this).data("productname");
+                    var product_price = $(this).data("productprice");
+                    var image = $(this).data("image");
+                    $.ajax({
+                            url: "<?php echo base_url(); ?>site/Cart/add",
+                            method: "POST",
+                            data: {
+                                    product_id: product_id,
+                                    product_name: product_name,
+                                    product_price: product_price,
+                                    image: image
+                            },
+                            success: function(data) {
+                                    alert("Product Added into Cart");
+                                    console.log(data);
+                            }
+                    });
+            });
+    });
+</script>

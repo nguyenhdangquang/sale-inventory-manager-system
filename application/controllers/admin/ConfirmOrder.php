@@ -26,16 +26,16 @@ class ConfirmOrder extends CI_Controller {
 		$this->load->model('admin/Admin_model');
 
 		if($this->Admin_model->UpdateConfirmByID($id)){
-			redirect(base_url('admin/ConfirmOrder'));
+			redirect(base_url('repository/Confirm'));
 		}
 	}
-	public function huy($idNhandc)
-	{
-		$this->load->model('Home_model');
-		if($this->Home_model->HuybyIDinProfile($idNhandc)){
-			redirect(base_url('admin/Ticket_Confirm'));
-		}
-	}
+	// public function huy($idNhandc)
+	// {
+	// 	$this->load->model('Home_model');
+	// 	if($this->Home_model->HuybyIDinProfile($idNhandc)){
+	// 		redirect(base_url('admin/Ticket_Confirm'));
+	// 	}
+	// }
 
 }
 

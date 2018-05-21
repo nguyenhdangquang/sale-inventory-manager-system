@@ -32,10 +32,8 @@
             </div>
           <?php endif; ?>
           
-          <?php if(in_array('createUser', $user_permission)): ?>
-            <a href="<?php echo base_url('repository/users/create') ?>" class="btn btn-primary">Add User</a>
+            <a href="<?php echo base_url('users/create') ?>" class="btn btn-primary">Add User</a>
             <br /> <br />
-          <?php endif; ?>
 
 
           <div class="box">
@@ -52,10 +50,7 @@
                   <th>Name</th>
                   <th>Phone</th>
                   <th>Group</th>
-
-                  <?php if(in_array('updateUser', $user_permission) || in_array('deleteUser', $user_permission)): ?>
                   <th>Action</th>
-                  <?php endif; ?>
                 </tr>
                 </thead>
                 <tbody>
@@ -68,20 +63,14 @@
                         <td><?php echo $v['user_info']['phone']; ?></td>
                         <td><?php echo $v['user_group']['group_name']; ?></td>
 
-                        <?php if(in_array('updateUser', $user_permission) || in_array('deleteUser', $user_permission)): ?>
 
                         <td>
-                          <?php if(in_array('updateUser', $user_permission)): ?>
-                            <a href="<?php echo base_url('repository/users/edit/'.$v['user_info']['id']) ?>" class="btn btn-default"><i class="fa fa-edit"></i></a>
-                          <?php endif; ?>
-                          <?php if(in_array('deleteUser', $user_permission)): ?>
-                            <a href="<?php echo base_url('repository/users/delete/'.$v['user_info']['id']) ?>" class="btn btn-default"><i class="fa fa-trash"></i></a>
-                          <?php endif; ?>
+                            <a href="<?php echo base_url('users/edit/'.$v['user_info']['id']) ?>" class="btn btn-default"><i class="fa fa-edit"></i></a>
+                            <a href="<?php echo base_url('users/delete/'.$v['user_info']['id']) ?>" class="btn btn-default"><i class="fa fa-trash"></i></a>
                         </td>
-                      <?php endif; ?>
                       </tr>
                     <?php endforeach ?>
-                  <?php endif; ?>
+                    <?php endif ?>
                 </tbody>
               </table>
             </div>

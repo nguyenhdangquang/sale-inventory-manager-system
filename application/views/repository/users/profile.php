@@ -22,35 +22,40 @@
 
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Your Profile</h3>
+              <h3 class="box-title">Profile XXX</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
+
+              
+            
               <table class="table table-bordered table-condensed table-hovered">
+              <?php foreach ($user_data as $value): ?>
                 <tr>
                   <th>Username</th>
-                  <td><?php echo $user_data['username']; ?></td>
+                  <td><?php echo $value['username']; ?></td>
                 </tr>
                 <tr>
                   <th>Email</th>
-                  <td><?php echo $user_data['email']; ?></td>
+                  <td><?php echo $value['email']; ?></td>
                 </tr>
                 <tr>
                   <th>First Name</th>
-                  <td><?php echo $user_data['firstname']; ?></td>
+                  <td><?php echo $value['firstname']; ?></td>
                 </tr>
                 <tr>
                   <th>Last Name</th>
-                  <td><?php echo $user_data['lastname']; ?></td>
+                  <td><?php echo $value['lastname']; ?></td>
                 </tr>
                 <tr>
                   <th>Gender</th>
-                  <td><?php echo ($user_data['gender'] == 1) ? 'Male' : 'Gender'; ?></td>
+                  <td><?php echo ($value['gender'] == 1) ? 'Male' : 'Gender'; ?></td>
                 </tr>
                 <tr>
                   <th>Phone</th>
-                  <td><?php echo $user_data['phone']; ?></td>
+                  <td><?php echo $value['phone']; ?></td>
                 </tr>
+                <?php endforeach ?>
                 <tr>
                   <th>Group</th>
                   <td><span class="label label-info"><?php echo $user_group['group_name']; ?></span></td>

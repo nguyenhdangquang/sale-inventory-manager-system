@@ -9,7 +9,7 @@
         <?php $this->load->view('site/navigator'); ?>
         <!-- ===================== TOP NAVIGATION : END ============================ -->
         <!-- ======================== HEADER =================================== -->
-        <?php $this->load->view('site/header-fordetail'); ?>
+        <?php $this->load->view('site/header'); ?>
         <!-- ========================= HEADER : END ============================= -->
         <!-- ======= SINGLE PRODUCT ============== -->
         <?php $this->load->view('site/detail/single-product'); ?>

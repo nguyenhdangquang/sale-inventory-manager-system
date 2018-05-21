@@ -9,8 +9,28 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		// $this->load->model('Admin_model');
-	 //    	$data = $this->Admin_model->ChartHome();
+		$this->load->model('admin/Admin_model');
+	    	$data = $this->Admin_model->ChartHome('2018');
+
+	    	$final_parking_data = array();
+		foreach ($data as $k => $v) {
+			
+			if(count($v) > 1) {
+				$total_amount_earned = array();
+				foreach ($v as $k2 => $v2) {
+					if($v2) {
+						$total_amount_earned[] = $v2['net_amount'];						
+					}
+				}
+				$final_parking_data[$k] = array_sum($total_amount_earned);	
+			}
+			else {
+				$final_parking_data[$k] = 0;	
+			}
+			
+		}
+	    	// var_dump($final_parking_data);
+	    	// die();
   // 		$totalEmp = $this->Admin_model->getTotalEmp();
   // 		$totalCus = $this->Admin_model->getTotalCus();
   // 		$totalRevenue= $this->Admin_model->getTotalRevenue();
@@ -23,7 +43,7 @@ class Home extends CI_Controller {
 	    die();*/
 
 
-  		// $this->data['listHOME'] = $data;
+  		$this->data['listHOME'] = $final_parking_data;
   		// $this->data['totalEmp'] = $totalEmp;
   		// $this->data['totalCus'] = $totalCus;
   		// $this->data['totalRevenue'] = $totalRevenue;

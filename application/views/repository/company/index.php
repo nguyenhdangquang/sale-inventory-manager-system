@@ -36,7 +36,7 @@
             <div class="box-header">
               <h3 class="box-title">Manage Company Information</h3>
             </div>
-            <form role="form" action="<?php base_url('repository/company/update') ?>" method="post">
+            <form role="form" action="<?php base_url('company/update') ?>" method="post">
               <div class="box-body">
 
                 <?php echo validation_errors(); ?>

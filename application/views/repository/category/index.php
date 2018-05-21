@@ -34,8 +34,10 @@
           </div>
         <?php endif; ?>
 
+        <?php if(in_array('createCategory', $user_permission)): ?>
           <button class="btn btn-primary" data-toggle="modal" data-target="#addModal">Add Category</button>
           <br /> <br />
+        <?php endif; ?>
 
         <div class="box">
           <div class="box-header">
@@ -48,7 +50,9 @@
               <tr>
                 <th>Category Name</th>
                 <th>Status</th>
+                <?php if(in_array('updateCategory', $user_permission) || in_array('deleteCategory', $user_permission)): ?>
                   <th>Action</th>
+                <?php endif; ?>
               </tr>
               </thead>
 
@@ -68,6 +72,7 @@
 </div>
 <!-- /.content-wrapper -->
 
+<?php if(in_array('createCategory', $user_permission)): ?>
 <!-- create brand modal -->
 <div class="modal fade" tabindex="-1" role="dialog" id="addModal">
   <div class="modal-dialog" role="document">
@@ -77,7 +82,7 @@
         <h4 class="modal-title">Add Category</h4>
       </div>
 
-      <form role="form" action="<?php echo base_url('category/create') ?>" method="post" id="createForm">
+      <form role="form" action="<?php echo base_url('repository/category/create') ?>" method="post" id="createForm">
 
         <div class="modal-body">
 
@@ -105,7 +110,9 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+<?php endif; ?>
 
+<?php if(in_array('updateCategory', $user_permission)): ?>
 <!-- edit brand modal -->
 <div class="modal fade" tabindex="-1" role="dialog" id="editModal">
   <div class="modal-dialog" role="document">
@@ -115,7 +122,7 @@
         <h4 class="modal-title">Edit Category</h4>
       </div>
 
-      <form role="form" action="<?php echo base_url('category/update') ?>" method="post" id="updateForm">
+      <form role="form" action="<?php echo base_url('repository/category/update') ?>" method="post" id="updateForm">
 
         <div class="modal-body">
           <div id="messages"></div>
@@ -144,7 +151,9 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+<?php endif; ?>
 
+<?php if(in_array('deleteCategory', $user_permission)): ?>
 <!-- remove brand modal -->
 <div class="modal fade" tabindex="-1" role="dialog" id="removeModal">
   <div class="modal-dialog" role="document">
@@ -154,7 +163,7 @@
         <h4 class="modal-title">Remove Category</h4>
       </div>
 
-      <form role="form" action="<?php echo base_url('category/remove') ?>" method="post" id="removeForm">
+      <form role="form" action="<?php echo base_url('repository/category/remove') ?>" method="post" id="removeForm">
         <div class="modal-body">
           <p>Do you really want to remove?</p>
         </div>
@@ -168,6 +177,7 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+<?php endif; ?>
 
 
 <script type="text/javascript">

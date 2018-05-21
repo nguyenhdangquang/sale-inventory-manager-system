@@ -7,7 +7,7 @@
 	    <meta name="keywords" content="MediaCenter, Template, eCommerce">
 	    <meta name="robots" content="all">
 
-	    <title>NineteamDTU Media Center</title>
+	    <title>MediaCenter - Responsive eCommerce Template</title>
 
 	    <!-- Bootstrap Core CSS -->
 	    <link rel="stylesheet" href="<?php echo base_url(); ?>/upload/assets/css/bootstrap.min.css">

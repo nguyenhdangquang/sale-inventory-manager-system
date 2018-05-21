@@ -40,7 +40,7 @@
             <h3 class="box-title">Edit Order</h3>
           </div>
           <!-- /.box-header -->
-          <form role="form" action="<?php base_url('orders/create') ?>" method="post" class="form-horizontal">
+          <form role="form" action="<?php base_url('repository/orders/create') ?>" method="post" class="form-horizontal">
               <div class="box-body">
 
                 <?php echo validation_errors(); ?>
@@ -185,7 +185,7 @@
 
                 <a target="__blank" href="<?php echo base_url() . 'orders/printDiv/'.$order_data['order']['id'] ?>" class="btn btn-default" >Print</a>
                 <button type="submit" class="btn btn-primary">Save Changes</button>
-                <a href="<?php echo base_url('orders/') ?>" class="btn btn-warning">Back</a>
+                <a href="<?php echo base_url('repository/orders/') ?>" class="btn btn-warning">Back</a>
               </div>
             </form>
           <!-- /.box-body -->
@@ -243,7 +243,7 @@
       var row_id = count_table_tbody_tr + 1;
 
       $.ajax({
-          url: base_url + '/orders/getTableProductRow/',
+          url: base_url + 'repository/orders/getTableProductRow/',
           type: 'post',
           dataType: 'json',
           success:function(response) {
@@ -312,7 +312,7 @@
 
     } else {
       $.ajax({
-        url: base_url + 'orders/getProductValueById',
+        url: base_url + 'repository/orders/getProductValueById',
         type: 'post',
         data: {product_id : product_id},
         dataType: 'json',

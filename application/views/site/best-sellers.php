@@ -9,7 +9,7 @@
                     <div class="col-xs-12 col-sm-4 no-margin product-item-holder size-medium hover">
                         <div class="product-item">
                             <div class="image">
-                                <img alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" />
+                                <img alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?><?php echo $value['image'] ?>" />
                             </div>
                             <div class="body">
                                 <div class="label-discount clear"></div>
@@ -20,7 +20,7 @@
                             </div>
                             <div class="prices">
 
-                                <div class="price-current text-right"><?php echo $this->cart->format_number($value['price']) ?> vnđ</div>
+                                <div class="price-current text-right"><?php echo $value['price'] ?> vnđ</div>
                             </div>
                             <div class="hover-area">
                                 <div class="add-cart-button">

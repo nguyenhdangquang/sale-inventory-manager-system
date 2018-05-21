@@ -12,11 +12,11 @@ class Home extends CI_Controller {
 	{
 		$this->load->model('site/Home_model');
 		$carts = $this->cart->contents();
-		$data = $this->Home_model->get4List_topproducts();
+		$data = $this->Home_model->get4List_products();
 		$data2 = $this->Home_model->get6List_products();
 		$list_catalog = $this->Home_model->get_list_catalogies();
 
-		$this->data['list4topproducts'] = $data;
+		$this->data['list4products'] = $data;
 		$this->data['list6products'] = $data2;
 		$this->data['listcatalogies'] = $list_catalog;
 		$this->data['listcart'] = $carts;

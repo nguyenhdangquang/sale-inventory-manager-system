@@ -1,9 +1,9 @@
 
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> 0.1.0
+      <b>By</b> NineTeam
     </div>
-    <strong>Copyright &copy; 2018-<?php echo date('Y') ?>.</strong> All rights reserved.
+    <strong>Copyright &copy; <?php echo date('Y') ?>-<?php echo date('M') ?>.</strong> Inventory Page by NineTeam.
   </footer>
 
   <!-- Add the sidebar's background. This div must be placed

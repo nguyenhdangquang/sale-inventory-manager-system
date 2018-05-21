@@ -51,7 +51,7 @@
                         <div class="row">
                             <div class="col-xs-4 col-sm-4 no-margin">
                                 <a href="#" class="thumb-holder">
-                        <img alt="" src="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>"/>
+                        <img alt="" src="<?php echo base_url(); ?><?php echo $value['image'] ?>"/>
                     </a>
                             </div>
                             <div class="col-xs-8 col-sm-8 no-margin">
@@ -148,14 +148,14 @@
                         <div class="row">
                             <div class="col-xs-4 col-sm-4 no-margin">
                                 <a href="#" class="thumb-holder">
-                        <img alt="" src="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" data-echo="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" />
+                        <img alt="" src="<?php echo base_url(); ?><?php echo $value['image'] ?>" data-echo="<?php echo base_url(); ?><?php echo $value['image'] ?>" />
                     </a>
                             </div>
                             <div class="col-xs-8 col-sm-8 no-margin">
                                 <a href="#"><?php echo $value['name'] ?></a>
                                 <div class="price">
                                     <div class="price-prev">$2000</div>
-                                    <div class="price-current"><?php echo $this->cart->format_number($value['price']) ?></div>
+                                    <div class="price-current"><?php echo $value['price'] ?></div>
                                 </div>
                             </div>
                         </div>
@@ -264,7 +264,7 @@
                         <div class="product-item">
                             <div class="ribbon red"><span>sale</span></div>
                             <div class="image">
-                                <img alt="" src="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" data-echo="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" />
+                                <img alt="" src="<?php echo base_url(); ?><?php echo $value['image'] ?>" data-echo="<?php echo base_url(); ?><?php echo $value['image'] ?>" />
                             </div>
                             <div class="body">
                                 <div class="title">
@@ -273,7 +273,7 @@
                                 <div class="brand">sharp</div>
                             </div>
                             <div class="prices">
-                                <div class="price-current text-right"><?php echo $this->cart->format_number($value['price']) ?>vnđ</div>
+                                <div class="price-current text-right"><?php echo $value['price'] ?>vnđ</div>
                             </div>
                             <div class="hover-area">
                                 <div class="add-cart-button">
@@ -529,7 +529,7 @@
                                         <div class="product-item">
                                             <div class="ribbon red"><span>sale</span></div>
                                             <div class="image">
-                                                <img alt="" src="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" data-echo="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" />
+                                                <img alt="" src="<?php echo base_url(); ?><?php echo $value['image'] ?>" data-echo="<?php echo base_url(); ?><?php echo $value['image'] ?>" />
                                             </div>
                                             <div class="body">
                                                 <div class="label-discount green">-50% sale</div>
@@ -540,7 +540,7 @@
                                             </div>
                                             <div class="prices">
                                                 <div class="price-prev">$1399.00</div>
-                                                <div class="price-current pull-right"><?php echo $this->cart->format_number($value['price']) ?></div>
+                                                <div class="price-current pull-right"><?php echo $value['price'] ?></div>
                                             </div>
                                             <div class="hover-area">
                                                 <div class="add-cart-button">

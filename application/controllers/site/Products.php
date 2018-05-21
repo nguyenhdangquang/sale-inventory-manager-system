@@ -12,7 +12,7 @@ class Products extends CI_Controller {
 	{
 		$this->load->model('site/Home_model');
 		$carts = $this->cart->contents();
-		$data = $this->Home_model->get4List_topproducts();
+		$data = $this->Home_model->get4List_products();
 		$data1 = $this->Home_model->getAllList_products();
 
 

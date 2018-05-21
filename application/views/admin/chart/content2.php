@@ -53,7 +53,7 @@
                        $data = array();
 
                       foreach ($listCTV as $key => $value) {
-                        array_push($data,array("value"=>$value, "label" =>$key));
+                        array_push($data,array("value"=>$value['SUM(GiaVe)'], "label" =>"Tháng ".$value['MONTH(LoaiNgay)']." "));
                       }
                   /*
 

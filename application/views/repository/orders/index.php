@@ -34,8 +34,10 @@
           </div>
         <?php endif; ?>
 
-          <a href="<?php echo base_url('orders/create') ?>" class="btn btn-primary">Add Order</a>
+        <?php if(in_array('createOrder', $user_permission)): ?>
+          <a href="<?php echo base_url('repository/orders/create') ?>" class="btn btn-primary">Add Order</a>
           <br /> <br />
+        <?php endif; ?>
 
         <div class="box">
           <div class="box-header">
@@ -53,7 +55,9 @@
                 <th>Total Products</th>
                 <th>Total Amount</th>
                 <th>Paid status</th>
+                <?php if(in_array('updateOrder', $user_permission) || in_array('viewOrder', $user_permission) || in_array('deleteOrder', $user_permission)): ?>
                   <th>Action</th>
+                <?php endif; ?>
               </tr>
               </thead>
 
@@ -73,6 +77,7 @@
 </div>
 <!-- /.content-wrapper -->
 
+<?php if(in_array('deleteOrder', $user_permission)): ?>
 <!-- remove brand modal -->
 <div class="modal fade" tabindex="-1" role="dialog" id="removeModal">
   <div class="modal-dialog" role="document">
@@ -82,7 +87,7 @@
         <h4 class="modal-title">Remove Order</h4>
       </div>
 
-      <form role="form" action="<?php echo base_url('orders/remove') ?>" method="post" id="removeForm">
+      <form role="form" action="<?php echo base_url('repository/orders/remove') ?>" method="post" id="removeForm">
         <div class="modal-body">
           <p>Do you really want to remove?</p>
         </div>
@@ -91,9 +96,12 @@
           <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
       </form>
+
+
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+<?php endif; ?>
 
 
 
@@ -108,7 +116,7 @@ $(document).ready(function() {
 
   // initialize the datatable 
   manageTable = $('#manageTable').DataTable({
-    'ajax': base_url + 'orders/fetchOrdersData',
+    'ajax': base_url + 'repository/orders/fetchOrdersData',
     'order': []
   });
 

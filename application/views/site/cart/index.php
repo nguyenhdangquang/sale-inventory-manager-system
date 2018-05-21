@@ -120,15 +120,9 @@
 </body>
 </html>
 <script>
+	var qty_num = document.getElementById('quantity').value;
 	function plus(e){
-        	var qty_num = document.getElementById('quantity'+e+'').value;
-        	qty_num = parseInt(qty_num) + 1;
-                document.getElementById('quantity'+e+'').setAttribute('value',qty_num);
-        }
-        function minus(e){
-        	var qty_num = document.getElementById('quantity'+e+'').value;
-        	qty_num = parseInt(qty_num) - 1;
-        	document.getElementById('quantity'+e+'').setAttribute('value',qty_num);
+        	console.log($(e));
         }
         $(document).ready(function() {
                 // $(document).on('click', '.remove_inventory', function() {

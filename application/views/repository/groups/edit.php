@@ -10,7 +10,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="<?php echo base_url('repository/groups/') ?>">Groups</a></li>
+        <li><a href="<?php echo base_url('groups/') ?>">Groups</a></li>
         <li class="active">Edit</li>
       </ol>
     </section>
@@ -37,7 +37,7 @@
             <div class="box-header">
               <h3 class="box-title">Edit Group</h3>
             </div>
-            <form role="form" action="<?php base_url('repository/groups/update') ?>" method="post">
+            <form role="form" action="<?php base_url('groups/update') ?>" method="post">
               <div class="box-body">
 
                 <?php echo validation_errors(); ?>
@@ -241,7 +241,7 @@
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Update Changes</button>
-                <a href="<?php echo base_url('repository/groups/') ?>" class="btn btn-warning">Back</a>
+                <a href="<?php echo base_url('groups/') ?>" class="btn btn-warning">Back</a>
               </div>
             </form>
           </div>

@@ -7,19 +7,19 @@
         <div id="owl-single-product">
             <div class="single-product-gallery-item" id="slide1">
                 <a data-rel="prettyphoto" href="images/products/product-gallery-01.jpg">
-                    <img class="img-responsive" alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?><?php echo $value['image'] ?>" />
+                    <img class="img-responsive" alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" />
                 </a>
             </div><!-- /.single-product-gallery-item -->
 
             <div class="single-product-gallery-item" id="slide2">
                 <a data-rel="prettyphoto" href="images/products/product-gallery-01.jpg">
-                    <img class="img-responsive" alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?><?php echo $value['image'] ?>" />
+                    <img class="img-responsive" alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" />
                 </a>
             </div><!-- /.single-product-gallery-item -->
 
             <div class="single-product-gallery-item" id="slide3">
                 <a data-rel="prettyphoto" href="images/products/product-gallery-01.jpg">
-                    <img class="img-responsive" alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?><?php echo $value['image'] ?>" />
+                    <img class="img-responsive" alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" />
                 </a>
             </div><!-- /.single-product-gallery-item -->
         </div><!-- /.single-product-slider -->
@@ -29,39 +29,39 @@
 
             <div id="owl-single-product-thumbnails">
                 <a class="horizontal-thumb active" data-target="#owl-single-product" data-slide="0" href="#slide1">
-                    <img width="67" alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?><?php echo $value['image'] ?>" />
+                    <img width="67" alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" />
                 </a>
 
                 <a class="horizontal-thumb" data-target="#owl-single-product" data-slide="1" href="#slide2">
-                    <img width="67" alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?><?php echo $value['image'] ?>" />
+                    <img width="67" alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" />
                 </a>
 
                 <a class="horizontal-thumb" data-target="#owl-single-product" data-slide="2" href="#slide3">
-                    <img width="67" alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?><?php echo $value['image'] ?>" />
+                    <img width="67" alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" />
                 </a>
 
                 <a class="horizontal-thumb" data-target="#owl-single-product" data-slide="0" href="#slide1">
-                    <img width="67" alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?><?php echo $value['image'] ?>" />
+                    <img width="67" alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" />
                 </a>
 
                 <a class="horizontal-thumb" data-target="#owl-single-product" data-slide="1" href="#slide2">
-                    <img width="67" alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?><?php echo $value['image'] ?>" />
+                    <img width="67" alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" />
                 </a>
 
                 <a class="horizontal-thumb" data-target="#owl-single-product" data-slide="2" href="#slide3">
-                    <img width="67" alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?><?php echo $value['image'] ?>" />
+                    <img width="67" alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" />
                 </a>
 
                 <a class="horizontal-thumb" data-target="#owl-single-product" data-slide="0" href="#slide1">
-                    <img width="67" alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?><?php echo $value['image'] ?>" />
+                    <img width="67" alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" />
                 </a>
 
                 <a class="horizontal-thumb" data-target="#owl-single-product" data-slide="1" href="#slide2">
-                    <img width="67" alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?><?php echo $value['image'] ?>" />
+                    <img width="67" alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" />
                 </a>
 
                 <a class="horizontal-thumb" data-target="#owl-single-product" data-slide="2" href="#slide3">
-                    <img width="67" alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?><?php echo $value['image'] ?>" />
+                    <img width="67" alt="" src="<?php echo base_url(); ?>/upload/assets/images/blank.gif" data-echo="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" />
                 </a>
             </div><!-- /#owl-single-product-thumbnails -->
 
@@ -101,8 +101,8 @@
         </div>
         
         <div class="prices">
-            <div class="price-current"><?php echo $value['price'] ?> vnđ</div>
-            <div class="price-prev"><?php echo $value['price'] ?> vnđ</div>
+            <div class="price-current"><?php echo $this->cart->format_number($value['price']); ?> vnđ</div>
+            <div class="price-prev"><?php echo $this->cart->format_number($value['price']) ?> vnđ</div>
         </div>
 
         <div class="qnt-holder">

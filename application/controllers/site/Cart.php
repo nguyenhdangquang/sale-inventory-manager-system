@@ -6,6 +6,7 @@ class Cart extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->library('cart');
+		$this->load->helper('date');
 	}
 
 	public function index()
@@ -122,22 +123,33 @@ class Cart extends CI_Controller {
 		$bill_no = 'BILPR-'.strtoupper(substr(md5(uniqid(mt_rand(), true)), 0, 4));
 
 		$created = strtotime(date('Y-m-d h:i:s a'));
-		$carts = $this->cart->contents();
+		
+		$totalrow = $this->input->post('total_row');
 
+		for ($i = 0; $i < $totalrow; $i++) {
+			//$rowid = $this->input->post(''+$i+'[rowid]');
+			$quantity = $this->input->post(''+$i+'[qty]');
+			$this->cart->update($quantity);
+		}
+		$carts = $this->cart->contents();
 		$this->load->model('site/Home_model');
 		if ($this->Home_model->Orders($bill_no, $name, $phone, $created, $amount, $id)) {
 			$idmax_trans = $this->Home_model->GetIdMaxOrders();
 			foreach ($carts as $key => $value) {
 				$product_id = $value['id'];
 				$qty = $value['qty'];
-				$amount_product = $value['price'];
-				$this->Home_model->Orders_item($idmax_trans, $product_id, $qty, $amount);
+				$rate = $value['price'];
+				$amount_product = $value['subtotal'];
+				$this->Home_model->AddRating($product_id, $qty, $amount_product);
+				$this->Home_model->Orders_item($idmax_trans, $product_id, $qty, $rate, $amount_product);
 				$qty_total = $this->Home_model->Sum_Qty_byID($product_id);
 				$this->Home_model->UpdateQTYforPR($product_id, $qty_total, $qty);
 			}
 			$this->cart->destroy();
 			$data = $this->Home_model->OrderSuccess($idmax_trans);
 			$this->data['successsss'] = $data;
+			$this->data['username'] = $name;
+			$this->data['phone'] = $phone;
 			$this->data['temp'] = 'site/cart/success_01';
 			// var_dump($this->data); die();
 			$this->load->view('site/cart/success', $this->data);

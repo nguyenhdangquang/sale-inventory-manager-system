@@ -40,7 +40,7 @@
             <h3 class="box-title">Edit Product</h3>
           </div>
           <!-- /.box-header -->
-          <form role="form" action="<?php base_url('repository/users/update') ?>" method="post" enctype="multipart/form-data">
+          <form role="form" action="<?php base_url('users/update') ?>" method="post" enctype="multipart/form-data">
               <div class="box-body">
 
                 <?php echo validation_errors(); ?>
@@ -145,7 +145,7 @@
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Save Changes</button>
-                <a href="<?php echo base_url('repository/users/') ?>" class="btn btn-warning">Back</a>
+                <a href="<?php echo base_url('users/') ?>" class="btn btn-warning">Back</a>
               </div>
             </form>
           <!-- /.box-body -->
@@ -171,6 +171,10 @@
     $("#mainProductNav").addClass('active');
     $("#manageProductNav").addClass('active');
     
+    var btnCust = '<button type="button" class="btn btn-secondary" title="Add picture tags" ' + 
+        'onclick="alert(\'Call your custom code here.\')">' +
+        '<i class="glyphicon glyphicon-tag"></i>' +
+        '</button>'; 
     $("#product_image").fileinput({
         overwriteInitial: true,
         maxFileSize: 1500,
@@ -184,7 +188,7 @@
         elErrorContainer: '#kv-avatar-errors-1',
         msgErrorClass: 'alert alert-block alert-danger',
         // defaultPreviewContent: '<img src="/uploads/default_avatar_male.jpg" alt="Your Avatar">',
-        layoutTemplates: {main2: '{preview} ' + ' {remove} {browse}'},
+        layoutTemplates: {main2: '{preview} ' +  btnCust + ' {remove} {browse}'},
         allowedFileExtensions: ["jpg", "png", "gif"]
     });
 

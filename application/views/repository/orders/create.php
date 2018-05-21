@@ -40,7 +40,7 @@
             <h3 class="box-title">Add Order</h3>
           </div>
           <!-- /.box-header -->
-          <form role="form" action="<?php base_url('repository/orders/create') ?>" method="post" class="form-horizontal">
+          <form role="form" action="<?php base_url('orders/create') ?>" method="post" class="form-horizontal">
               <div class="box-body">
 
                 <?php echo validation_errors(); ?>
@@ -164,7 +164,7 @@
                 <input type="hidden" name="service_charge_rate" value="<?php echo $company_data['service_charge_value'] ?>" autocomplete="off">
                 <input type="hidden" name="vat_charge_rate" value="<?php echo $company_data['vat_charge_value'] ?>" autocomplete="off">
                 <button type="submit" class="btn btn-primary">Create Order</button>
-                <a href="<?php echo base_url('repository/orders/') ?>" class="btn btn-warning">Back</a>
+                <a href="<?php echo base_url('orders/') ?>" class="btn btn-warning">Back</a>
               </div>
             </form>
           <!-- /.box-body -->
@@ -203,7 +203,7 @@
       var row_id = count_table_tbody_tr + 1;
 
       $.ajax({
-          url: base_url + 'repository/orders/getTableProductRow/',
+          url: base_url + '/orders/getTableProductRow/',
           type: 'post',
           dataType: 'json',
           success:function(response) {
@@ -271,7 +271,7 @@
 
     } else {
       $.ajax({
-        url: base_url + 'repository/orders/getProductValueById',
+        url: base_url + 'orders/getProductValueById',
         type: 'post',
         data: {product_id : product_id},
         dataType: 'json',

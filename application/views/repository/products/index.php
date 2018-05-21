@@ -34,8 +34,10 @@
           </div>
         <?php endif; ?>
 
-          <a href="<?php echo base_url('products/create') ?>" class="btn btn-primary">Add Product</a>
+        <?php if(in_array('createProduct', $user_permission)): ?>
+          <a href="<?php echo base_url('repository/products/create') ?>" class="btn btn-primary">Add Product</a>
           <br /> <br />
+        <?php endif; ?>
 
         <div class="box">
           <div class="box-header">
@@ -53,7 +55,9 @@
                 <th>Qty</th>
                 <th>Store</th>
                 <th>Availability</th>
+                <?php if(in_array('updateProduct', $user_permission) || in_array('deleteProduct', $user_permission)): ?>
                   <th>Action</th>
+                <?php endif; ?>
               </tr>
               </thead>
 
@@ -73,6 +77,7 @@
 </div>
 <!-- /.content-wrapper -->
 
+<?php if(in_array('deleteProduct', $user_permission)): ?>
 <!-- remove brand modal -->
 <div class="modal fade" tabindex="-1" role="dialog" id="removeModal">
   <div class="modal-dialog" role="document">
@@ -82,7 +87,7 @@
         <h4 class="modal-title">Remove Product</h4>
       </div>
 
-      <form role="form" action="<?php echo base_url('products/remove') ?>" method="post" id="removeForm">
+      <form role="form" action="<?php echo base_url('repository/products/remove') ?>" method="post" id="removeForm">
         <div class="modal-body">
           <p>Do you really want to remove?</p>
         </div>
@@ -96,6 +101,7 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+<?php endif; ?>
 
 
 
@@ -109,7 +115,7 @@ $(document).ready(function() {
 
   // initialize the datatable 
   manageTable = $('#manageTable').DataTable({
-    'ajax': base_url + 'products/fetchProductData',
+    'ajax': base_url + 'repository/products/fetchProductData',
     'order': []
   });
 

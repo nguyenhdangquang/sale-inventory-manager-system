@@ -3,21 +3,21 @@
         <div class="tab-holder">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" >
-                <li class="active"><a href="#featured" data-toggle="tab">Hot</a></li>
-                <li><a href="#new-arrivals" data-toggle="tab">New</a></li>
-                <li><a href="#top-sales" data-toggle="tab">Love</a></li>
+                <li class="active"><a href="#featured" data-toggle="tab">featured</a></li>
+                <li><a href="#new-arrivals" data-toggle="tab">new arrivals</a></li>
+                <li><a href="#top-sales" data-toggle="tab">top sales</a></li>
             </ul>
 
             <!-- Tab panes -->
             <div class="tab-content">
                 <div class="tab-pane active" id="featured">
                     <div class="product-grid-holder">
-                        <?php foreach ($list4topproducts as $key => $value): ?>
+                        <?php foreach ($list4products as $key => $value): ?>
                         <div class="col-sm-4 col-md-3  no-margin product-item-holder hover">
                             <div class="product-item">
                                 <div class="ribbon red"><span>sale</span></div> 
                                 <div class="image">
-                                    <img alt="" src="<?php echo base_url(); ?>/<?php echo $value['image'] ?>" data-echo="<?php echo base_url(); ?>/upload/upload/product/<?php echo $value['image'] ?>" />
+                                    <img alt="" src="<?php echo base_url(); ?>/<?php echo $value['image'] ?>" data-echo="<?php echo base_url(); ?><?php echo $value['image'] ?>" />
                                 </div>
                                 <div class="body">
                                     <div class="label-discount green">-50% sale</div>
@@ -28,15 +28,16 @@
                                 </div>
                                 <div class="prices">
                                     <div class="price-prev"><?php echo $value['price'] ?> vnđ</div>
-                                    <div class="price-current pull-right"><?php echo $this->cart->format_number($value['price']) ?> vnđ</div>
+                                    <div class="price-current pull-right"><?php echo $value['price'] ?> vnđ</div>
                                 </div>
 
                                 <div class="hover-area">
                                     <div class="add-cart-button">
-                                        <a data-image="<?php echo $value['image'] ?>" data-productid="<?php echo $value['id'] ?>" data-productname="<?php echo $value['name'] ?>" data-productprice="<?php echo $value['price'] ?>" href="#" class="le-button add_cart">Thêm vào giỏ</a>
+                                        <a data-image="<?php echo $value['image'] ?>" data-productid="<?php echo $value['id'] ?>" data-productname="<?php echo $value['name'] ?>" data-productprice="<?php echo $value['price'] ?>" href="#" class="le-button add_cart">add to cart</a>
                                     </div>
                                     <div class="wish-compare">
-                                        <a class="btn-add-to-wishlist" href="#">Thêm danh sách yêu thích</a>
+                                        <a class="btn-add-to-wishlist" href="#">add to wishlist</a>
+                                        <a class="btn-add-to-compare" href="#">compare</a>
                                     </div>
                                 </div>
                             </div>

@@ -1,5 +1,4 @@
 <section id="single-product-tab">
-    <?php foreach ($detail_desc as $key => $value): ?>
     <div class="container">
         <div class="tab-holder">
             
@@ -8,9 +7,12 @@
                 <li><a href="#additional-info" data-toggle="tab">Additional Information</a></li>
                 <li><a href="#reviews" data-toggle="tab">Reviews (3)</a></li>
             </ul><!-- /.nav-tabs -->
+
             <div class="tab-content">
                 <div class="tab-pane active" id="description">
-                    <?php echo $value['description'] ?>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet porttitor eros. Praesent quis diam placerat, accumsan velit interdum, accumsan orci. Nunc libero sem, elementum in semper in, sollicitudin vitae dolor. Etiam sed tempus nisl. Integer vel diam nulla. Suspendisse et aliquam est. Nulla molestie ante et tortor sollicitudin, at elementum odio lobortis. Pellentesque neque enim, feugiat in elit sed, pharetra tempus metus. Pellentesque non lorem nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+                    <p>Sed consequat orci vel rutrum blandit. Nam non leo vel risus cursus porta quis non nulla. Vestibulum vitae pellentesque nunc. In hac habitasse platea dictumst. Cras egestas, turpis a malesuada mollis, magna tortor scelerisque urna, in pellentesque diam tellus sit amet velit. Donec vel rhoncus nisi, eget placerat elit. Phasellus dignissim nisl vel lectus vehicula, eget vehicula nisl egestas. Duis pretium sed risus dapibus egestas. Nam lectus felis, sodales sit amet turpis se.</p>
 
                     <div class="meta-row">
                         <div class="inline">
@@ -226,5 +228,4 @@
 
         </div><!-- /.tab-holder -->
     </div><!-- /.container -->
-    <?php endforeach ?>
 </section><!-- /#single-product-tab -->

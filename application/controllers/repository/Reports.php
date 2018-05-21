@@ -7,7 +7,7 @@ class Reports extends Admin_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->data['page_title'] = 'Report';
+		$this->data['page_title'] = 'Stores';
 		$this->load->model('repository/model_reports');
 	}
 
@@ -18,8 +18,8 @@ class Reports extends Admin_Controller
 	public function index()
 	{
 		if(!in_array('viewReports', $this->permission)) {
-	            redirect('repository/dashboard', 'refresh');
-	        }
+            redirect('repository/dashboard', 'refresh');
+        }
 		
 		$today_year = date('Y');
 

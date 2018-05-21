@@ -10,7 +10,7 @@
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active"><a href="<?php echo base_url('attributes/') ?>">Attributes</a></li>
+      <li class="active"><a href="<?php echo base_url('repository/attributes/') ?>">Attributes</a></li>
       <li class="active">Attributes Value</li>
     </ol>
   </section>
@@ -89,7 +89,7 @@
         <h4 class="modal-title">Add Attribute Value</h4>
       </div>
 
-      <form role="form" action="<?php echo base_url('attributes/createValue') ?>" method="post" id="createForm">
+      <form role="form" action="<?php echo base_url('repository/attributes/createValue') ?>" method="post" id="createForm">
 
         <div class="modal-body">
           <div class="form-group">
@@ -120,7 +120,7 @@
         <h4 class="modal-title">Edit Attribute Value</h4>
       </div>
 
-      <form role="form" action="<?php echo base_url('attributes/updateValue') ?>" method="post" id="updateForm">
+      <form role="form" action="<?php echo base_url('repository/attributes/updateValue') ?>" method="post" id="updateForm">
 
         <div class="modal-body">
           <div id="messages"></div>
@@ -153,7 +153,7 @@
         <h4 class="modal-title">Remove Attribute Value</h4>
       </div>
 
-      <form role="form" action="<?php echo base_url('attributes/removeValue') ?>" method="post" id="removeForm">
+      <form role="form" action="<?php echo base_url('repository/attributes/removeValue') ?>" method="post" id="removeForm">
         <div class="modal-body">
           <p>Do you really want to remove?</p>
         </div>
@@ -182,7 +182,7 @@ $(document).ready(function() {
 
   // initialize the datatable 
   manageTable = $('#manageTable').DataTable({
-    'ajax': base_url+'attributes/fetchAttributeValueData/'+<?php echo $attribute_data['id']; ?>,
+    'ajax': base_url+'repository/attributes/fetchAttributeValueData/'+<?php echo $attribute_data['id']; ?>,
     'order': []
   });
 
@@ -251,7 +251,7 @@ function editFunc(id)
 { 
 
   $.ajax({
-    url: base_url+'attributes/fetchAttributeValueById/'+id,
+    url: base_url+'repository/attributes/fetchAttributeValueById/'+id,
     type: 'post',
     dataType: 'json',
     success:function(response) {

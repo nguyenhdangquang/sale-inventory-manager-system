@@ -9,7 +9,7 @@
 		<?php $this->load->view('site/navigator'); ?>
 		<!-- ===================== TOP NAVIGATION : END ============================ -->
 		<!-- ======================== HEADER =================================== -->
-		<?php $this->load->view('site/header'); ?>
+		<?php $this->load->view('site/header-fordetail'); ?>
 		<!-- ========================= HEADER : END ============================= -->
 		<!-- ======= CART ============== -->
 		<?php  $this->load->view($temp);?>
@@ -120,14 +120,25 @@
 </body>
 </html>
 <script>
-        function printDiv(divName) {
-	     	var printContents = document.getElementById(divName).innerHTML;
-	     	var originalContents = document.body.innerHTML;
+        $(document).ready(function() {
+                $(document).on('click', '.remove_inventory', function() {
+                        var row_id = $(this).attr("id");
+                        if (confirm("Are you sure you want to remove this?")) {
+                                $.ajax({
+                                        url: "<?php echo base_url(); ?>site/Cart/remove",
+                                        method: "POST",
+                                        data: {
+                                                row_id: row_id
+                                        },
+                                        success: function(data) {
+                                                alert("Product removed from Cart");
+                                        }
+                                });
+                        } else {
+                                return false;
+                        }
+                });
+                
 
-	     	document.body.innerHTML = printContents;
-
-	     	window.print();
-
-	     	document.body.innerHTML = originalContents;
-	}
+        });
 </script>

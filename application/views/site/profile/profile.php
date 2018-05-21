@@ -127,7 +127,7 @@
                                                                         <td> <?php echo $value['price']; ?> </td>
                                                                         <td> <?php echo $value['amount']; ?> </td>
                                                                         <td> <?php echo $value['date_time']; ?> </td>
-                                                                        <td> Đã mua hàng </td>
+                                                                        <td> Chưa xác nhận </td>
                                                                         <td>
                                                                                 <a href="#" class="btn btn-danger">Hủy</a>
                                                                         </td>

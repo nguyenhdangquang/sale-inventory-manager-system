@@ -11,15 +11,10 @@ class Home_model extends CI_Model {
 	}
 
 	// get list 4 products
-	public function get4List_topproducts()
+	public function get4List_products()
 	{
-		$this->db->select('COUNT(`rating`.`qty`), `products`.`name`, `products`.`id`, `products`.`price`, `products`.`image`');
-		$this->db->from('rating');
-		$this->db->join('products', 'products.id = rating.product_id', 'left');
-		$this->db->group_by('`rating`.`product_id`');
-		$this->db->limit('4');
-		$dulieu = $this->db->get();
-
+		$this->db->select('*');
+		$dulieu = $this->db->get('products', 4);
 		
 
 		//bien du lieu thanh mang
@@ -170,18 +165,11 @@ class Home_model extends CI_Model {
 		return $this->db->insert('orders', $data);
 	}
 	//add vao order
-	public function Orders_item($trans_id, $product_id, $qty, $rate, $amount)
+	public function Orders_item($trans_id, $product_id, $qty, $amount)
 	{
-		$data = array('order_id' => $trans_id, 'product_id' => $product_id, 'qty' => $qty, 'rate' => $rate,'amount' =>$amount);
+		$data = array('order_id' => $trans_id, 'product_id' => $product_id, 'qty' => $qty, 'amount' =>$amount, 'rate' => $amount);
 
 		return $this->db->insert('orders_item', $data);
-	}
-	// add rating
-	public function AddRating($product_id, $qty, $total)
-	{
-		$data = array('product_id' => $product_id, 'qty' => $qty, 'temp' => $total);
-
-		return $this->db->insert('rating', $data);
 	}
 
 	// get id trans cuoi cung
@@ -262,32 +250,11 @@ class Home_model extends CI_Model {
 		//bien du lieu thanh mang
 		$dulieu = $dulieu->result_array();
 
-		// echo '<pre>';
-		// var_dump($dulieu);
-		// die();
+		/*echo '<pre>';
+		var_dump($dulieu);
+		die();*/
 
 		return $dulieu;
-	}
-
-	//check exist account
-	public function checkAccountExist($email)
-	{
-		$this->db->select('*');
-		//$this->db->where('Email', $email);
-		$this->db->where('email', $email);
-
-		$dulieu = $this->db->get('users');
-
-		//bien du lieu thanh mang
-		$dulieu = $dulieu->result_array();
-
-		/*var_dump($dulieu);*/
-
-		if(count($dulieu) >0){
-    			return true;
-	    	} else {
-	    		return false;
-	    	}
 	}
 
 
